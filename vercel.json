@@ -2,9 +2,6 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    {
-      "source": "/essays/:slug",
-      "destination": "/:slug.html"
-    }
+    { "source": "/essays/:slug", "destination": "/:slug" }
   ]
 }
