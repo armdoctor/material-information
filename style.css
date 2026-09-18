@@ -1,19 +1,11 @@
 :root {
-  --bg: #fbfaf7;
-  --ink: #1c1b18;
-  --muted: #6b675f;
-  --rule: #e2ded6;
-  --accent: #8b2d1f;
+  color-scheme: light;
+  --bg: #ffffff;
+  --ink: #16181d;
+  --muted: #5d6270;
+  --rule: #e6e8ee;
+  --accent: #2446c9;
   --measure: 38rem;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #141412;
-    --ink: #e8e4dc;
-    --muted: #9a958b;
-    --rule: #2c2b27;
-    --accent: #d9735f;
-  }
 }
 * { box-sizing: border-box; }
 html { font-size: 112.5%; -webkit-text-size-adjust: 100%; }
@@ -26,7 +18,19 @@ body {
   line-height: 1.55;
   font-feature-settings: "kern", "liga", "onum";
 }
-.wrap { max-width: var(--measure); margin: 0 auto; padding: 0 1rem; }
+.wrap { position: relative; z-index: 1; max-width: var(--measure); margin: 0 auto; padding: 0 1rem; }
+
+/* Electron field: fixed canvas behind the text, never intercepts clicks */
+#field {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  z-index: 0; pointer-events: none;
+}
+/* A soft white column behind the text keeps it crisp over the motion */
+.wrap::before {
+  content: ""; position: absolute; z-index: -1;
+  inset: 0 -2.5rem;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0, rgba(255,255,255,.82) 2.5rem, rgba(255,255,255,.82) calc(100% - 2.5rem), rgba(255,255,255,0) 100%);
+}
 
 header.mast { padding: 3rem 0 2rem; border-bottom: 1px solid var(--rule); }
 .mast .name {
