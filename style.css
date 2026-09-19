@@ -72,7 +72,6 @@ a.chip:hover .k { color: #aab0c0; }
 }
 .hero h1 .px .ch { display: inline-block; transition: color 0.25s ease; }
 .hero h1 .px .ch.live { color: #c9ccd4; }
-@media (prefers-reduced-motion: reduce) { .hero h1 .px .ch.live { color: inherit; } }
 .hero .thesis {
   margin: 0.55em 0 0; max-width: 21em;
   font-size: clamp(24px, 3.1vw, 46px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 500;
@@ -165,4 +164,14 @@ a.chip:hover .k { color: #aab0c0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .bar .track { animation: none; }
+}
+
+/* ---------- phones: let the title own the first screen ---------- */
+@media (max-width: 640px) {
+  .chip { font-size: 11px; padding: 6px 8px; }
+  .hero { padding: 44px 0 36px; }
+  .hero h1 { font-size: 22.5vw; line-height: 0.9; }
+  .hero .thesis { font-size: 22px; line-height: 1.12; margin-top: 0.9em; max-width: 16em; }
+  .byline { font-size: 11px; margin-top: 12px; }
+  .hero .lede { font-size: 15px; line-height: 1.5; margin-top: 28px; color: var(--muted); }
 }
