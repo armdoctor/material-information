@@ -175,3 +175,9 @@ a.chip:hover .k { color: #aab0c0; }
   .byline { font-size: 11px; margin-top: 12px; }
   .hero .lede { font-size: 15px; line-height: 1.5; margin-top: 28px; color: var(--muted); }
 }
+
+/* ---------- optical left alignment: pull large type in so its ink lines up with the body text ---------- */
+.hero h1 { margin-left: -0.08em; }
+.hero h1 .px { margin-left: -0.09em; }
+.hero .thesis { margin-left: -0.07em; }
+@media (max-width: 640px) { .hero h1 { margin-left: -0.06em; } .hero .thesis { margin-left: 0; } }
