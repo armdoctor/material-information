@@ -12,12 +12,12 @@
   var glyphs = '0123456789abcdefhkmnorstuxz', last = -1;
   function scramble() {
     var i; do { i = Math.floor(Math.random() * spans.length); } while (i === last); last = i;
-    var s = spans[i], orig = word[i], steps = 5, n = 0;
+    var s = spans[i], orig = word[i], steps = 6, n = 0;
     s.classList.add('live');
     var t = setInterval(function () {
       if (n++ < steps) { s.textContent = glyphs[Math.floor(Math.random() * glyphs.length)]; }
       else { clearInterval(t); s.textContent = orig; s.classList.remove('live'); }
-    }, 95);
+    }, 80);
   }
-  setInterval(function () { if (!document.hidden) scramble(); }, 4100);
+  setInterval(function () { if (!document.hidden) scramble(); }, 2800);
 })();
