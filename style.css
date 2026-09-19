@@ -181,3 +181,10 @@ a.chip:hover .k { color: #aab0c0; }
 .hero h1 .px { margin-left: -0.09em; }
 .hero .thesis { margin-left: -0.07em; }
 @media (max-width: 640px) { .hero h1 { margin-left: -0.06em; } .hero .thesis { margin-left: 0; } }
+/* thesis: shorter line on phones */
+.hero .thesis .t-short { display: none; }
+@media (max-width: 640px) {
+  .hero .thesis .t-full { display: none; }
+  .hero .thesis .t-short { display: inline; white-space: nowrap; }
+}
+@media (max-width: 640px) { .hero .thesis { font-size: min(24px, calc((100vw - 34px) * 0.057)); } }
